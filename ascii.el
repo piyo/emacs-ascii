@@ -433,6 +433,13 @@ If ARG is anything else, turn on display."
 ;; Internal variables
 
 
+(defconst ascii-c1controls-acronyms
+  ["PAD" "HOP" "BPH" "NBH" "IND" "NEL" "SSA" "ESA"
+   "HTS" "HTJ" "LTS" "PLD" "PLU" "RI"  "SS2" "SS3"
+   "DCS" "PU1" "PU2" "STS" "CCH" "MW"  "SPA" "EPA"
+   "SOS" "SGCI" "SCI" "CSI" "ST" "OSC" "PM" "APC"]
+  "C1 Controls (U+0080..U+009f) Acronyms")
+
 (defconst ascii-table
   (concat
    ;; (0 <= x <= 127)
@@ -493,7 +500,7 @@ If ARG is anything else, turn on display."
      str)
 
    ;; (128 <= x <= 255)
-   "\n OCT DEC HX               |-  OCT DEC HX    |-  OCT DEC HX    \
+   "\n OCT DEC HX                 |-  OCT DEC HX    |-  OCT DEC HX    \
 |-  OCT DEC HX\n"
    (let ((str "")
 	 (c   127)
@@ -505,9 +512,10 @@ If ARG is anything else, turn on display."
 	     c96 (+ c 96)
 	     str (concat
 		  str
-		  (format "\\%03o %03d %02x  \\%03o         || \
+		  (format "\\%03o %03d %02x  \\%03o %s      || \
 \\%03o %03d %02x  %c || \\%03o %03d %02x  %c || \\%03o %03d %02x  %c\n"
 			  c   c   c   c
+			  (format "%-4s" (elt ascii-c1controls-acronyms (- c 128)))
 			  c32 c32 c32 c32
 			  c64 c64 c64 c64
 			  c96 c96 c96 c96))))
