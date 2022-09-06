@@ -436,43 +436,43 @@ If ARG is anything else, turn on display."
 (defconst ascii-table
   (concat
    ;; (0 <= x <= 127)
-   " OCT DEC HX               |-  OCT DEC HX    |-  OCT DEC HX    \
+   " OCT DEC HX                 |-  OCT DEC HX    |-  OCT DEC HX    \
 |-  OCT DEC HX\n"
    (let ((str "")
 	 (c   -1)
 	 (cod [
-	       "C-@ NUL ^@   "		; 0
-	       "C-a SOH ^A   "		; 1
-	       "C-b STX ^B   "		; 2
-	       "C-c ETX ^C   "		; 3
-	       "C-d EOT ^D   "		; 4
-	       "C-e ENQ ^E   "		; 5
-	       "C-f ACK ^F   "		; 6
-	       "C-g BEL ^G \\a"		; 7
-	       "C-h BS  ^H \\b"		; 8
-	       "TAB HT  ^I \\t"		; 9
-	       "C-j LF  ^J \\n"		; 10
-	       "C-k VT  ^K \\v"		; 11
-	       "C-l FF  ^L \\f"		; 12
-	       "RET CR  ^M \\r"		; 13
-	       "C-n SO  ^N   "		; 14
-	       "C-o SI  ^O   "		; 15
-	       "C-p DLE ^P   "		; 16
-	       "C-q DC1 ^Q   "		; 17
-	       "C-r DC2 ^R   "		; 18
-	       "C-s DC3 ^S   "		; 19
-	       "C-t DC4 ^T   "		; 20
-	       "C-u NAK ^U   "		; 21
-	       "C-v SYN ^V   "		; 22
-	       "C-w ETB ^W   "		; 23
-	       "C-x CAN ^X   "		; 24
-	       "C-y EM  ^Y   "		; 25
-	       "C-z SUB ^Z   "		; 26
-	       "ESC ESC ^[ \\e"		; 27
-	       "C-\\ FS  ^\\   "	; 28
-	       "C-] GS  ^]   "		; 29
-	       "C-^ RS  ^^   "		; 30
-	       "C-_ US  ^_   "		; 31
+	       "C-@ NUL ^@ ␀   "		; 0
+	       "C-a SOH ^A ␁   "		; 1
+	       "C-b STX ^B ␂   "		; 2
+	       "C-c ETX ^C ␃   "		; 3
+	       "C-d EOT ^D ␄   "		; 4
+	       "C-e ENQ ^E ␅   "		; 5
+	       "C-f ACK ^F ␆   "		; 6
+	       "C-g BEL ^G ␇ \\a"		; 7
+	       "C-h BS  ^H ␈ \\b"		; 8
+	       "TAB HT  ^I ␉ \\t"		; 9
+	       "C-j LF  ^J ␊ \\n"		; 10
+	       "C-k VT  ^K ␋ \\v"		; 11
+	       "C-l FF  ^L ␌ \\f"		; 12
+	       "RET CR  ^M ␍ \\r"		; 13
+	       "C-n SO  ^N ␎   "		; 14
+	       "C-o SI  ^O ␏   "		; 15
+	       "C-p DLE ^P ␐   "		; 16
+	       "C-q DC1 ^Q ␑   "		; 17
+	       "C-r DC2 ^R ␒   "		; 18
+	       "C-s DC3 ^S ␓   "		; 19
+	       "C-t DC4 ^T ␔   "		; 20
+	       "C-u NAK ^U ␕   "		; 21
+	       "C-v SYN ^V ␖   "		; 22
+	       "C-w ETB ^W ␗   "		; 23
+	       "C-x CAN ^X ␘   "		; 24
+	       "C-y EM  ^Y ␙   "		; 25
+	       "C-z SUB ^Z ␚   "		; 26
+	       "ESC ESC ^[ ␛ \\e"		; 27
+	       "C-\\ FS  ^\\ ␜   "		; 28
+	       "C-] GS  ^] ␝   "		; 29
+	       "C-^ RS  ^^ ␞   "		; 30
+	       "C-_ US  ^_ ␟   "		; 31
 	       ])
 	 c32 c64 c96)
      (while (< c 31)
